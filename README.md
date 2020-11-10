@@ -6,3 +6,8 @@ Please see the breakdowns in the export folder for more precise info. Play aroun
 Deviations can occur, and is welcomed.
 
 Images used are placed in the assets folder.
+
+Login Screen    - Brendon
+Profile Screen  - Jordon
+Menu            - Nakeem
+Cart            - Alex
