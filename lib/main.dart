@@ -1,8 +1,5 @@
-
 import 'package:SWEN/custom_icons_icons.dart';
 import 'package:flutter/material.dart';
-
-
 
 void main() {
   runApp(MyApp());
@@ -14,6 +11,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  String selection = "LOGIN";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,21 +41,67 @@ class _MyAppState extends State<MyApp> {
                       children: <Widget>[
                         SizedBox(height: 20),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
+                            InkWell(
+                              onTap: () {
+                                print("Login");
+                                selection = "LOGIN";
+                                setState(() {
+                                });
+                              },
+                              child: Container(
+                                alignment: Alignment.centerRight,
+                                width: 125,
+                                child: Text(
+                                  "Login",
+                                  style: TextStyle(
+                                      color: selection == "LOGIN"
+                                          ? Color(0xff16C121)
+                                          : Colors.black,
+                                      fontSize: 25,
+                                      fontFamily: 'Source Sans Pro',
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              ),
+                            ),
                             Text(
-                              "Login  |  Register",
+                              "|",
                               style: TextStyle(
                                   fontSize: 25,
                                   fontFamily: 'Source Sans Pro',
                                   fontWeight: FontWeight.w700),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                print("Register");
+                                selection = "REGISTER";
+                                setState(() {                                
+                                });
+                              },
+                              child: Container(
+                                alignment: Alignment.centerLeft,
+                                width: 125,
+                                child: Text(
+                                  "Register",
+                                  style: TextStyle(
+                                      color: selection == "REGISTER"
+                                          ? Color(0xff16C121)
+                                          : Colors.black,
+                                      fontSize: 25,
+                                      fontFamily: 'Source Sans Pro',
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              ),
                             ),
                           ],
                         ),
                         SizedBox(height: 20),
                         Row(
                           children: <Widget>[
-                            SizedBox(width: 40,),
+                            SizedBox(
+                              width: 40,
+                            ),
                             Text(
                               "Email",
                               style: TextStyle(
@@ -88,7 +132,9 @@ class _MyAppState extends State<MyApp> {
                         SizedBox(height: 10),
                         Row(
                           children: <Widget>[
-                            SizedBox(width: 40,),
+                            SizedBox(
+                              width: 40,
+                            ),
                             Text(
                               "Password",
                               style: TextStyle(
@@ -139,7 +185,8 @@ class _MyAppState extends State<MyApp> {
                         Text(
                           "OR",
                           style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.w700,
+                              fontSize: 25,
+                              fontWeight: FontWeight.w700,
                               fontFamily: 'Source Sans Pro'),
                         ),
                         SizedBox(height: 15),
@@ -155,12 +202,18 @@ class _MyAppState extends State<MyApp> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
-                              SizedBox(width: 5,),
-                              Icon(CustomIcons.google,
-                              color: Colors.white,),
-                              SizedBox(width: 20,),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Icon(
+                                CustomIcons.google,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
                               Text(
-                                "Sign Up With Google",
+                                "Sign In With Google",
                                 style: TextStyle(
                                     fontSize: 16,
                                     color: Colors.white,
@@ -183,12 +236,18 @@ class _MyAppState extends State<MyApp> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
-                              SizedBox(width: 5,),
-                              Icon(CustomIcons.facebook,
-                              color: Colors.white,),
-                              SizedBox(width: 20,),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Icon(
+                                CustomIcons.facebook,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
                               Text(
-                                "Sign Up With Facebook",
+                                "Sign In With Facebook",
                                 style: TextStyle(
                                     fontSize: 16,
                                     color: Colors.white,
